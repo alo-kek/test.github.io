@@ -1,0 +1,225 @@
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  :root {
+    --bg-color: #f9f9f9;
+    --text-color: #333;
+    --card-color: #fff;
+    --border-color: #ccc;
+    --primary-color: #00acc1;
+    --hover-bg: #f0f0f0;
+    --correct-color: green;
+    --incorrect-color: red;
+    --modal-bg: rgba(0,0,0,0.5);
+    --danger: #e57373;
+    --danger-hover: #c62828;
+    --highlight: #d1ecf1;
+    --correct-bg: #e6ffe6;
+    --incorrect-bg: #ffe6e6;
+  }
+  
+  body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #eee;
+    --card-color: #1e1e1e;
+    --border-color: #444;
+    --hover-bg: #2a2a2a;
+    --modal-bg: rgba(255,255,255,0.1);
+    --correct-bg: #1f3e1f;
+    --incorrect-bg: #3e1f1f;
+  }
+  
+  .section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: var(--card-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  h1 {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease;
+  }
+  
+  .question-block {
+    margin-bottom: 30px;
+    animation: fadeInUp 0.5s ease;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 15px;
+  }
+  
+  .question-block h3 {
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .answers label {
+    display: block;
+    padding: 10px 15px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: 0.3s;
+    cursor: pointer;
+    font-weight: 500;
+    background-color: transparent;
+  }
+  
+  .answers label:hover {
+    background-color: var(--hover-bg);
+  }
+  
+  .answers label.selected {
+    background-color: var(--highlight);
+    border-color: var(--primary-color);
+    transform: scale(1.01);
+  }
+  
+  .answers label.correct {
+    background-color: var(--correct-bg);
+    border-color: var(--correct-color);
+  }
+  
+  .answers label.incorrect {
+    background-color: var(--incorrect-bg);
+    border-color: var(--incorrect-color);
+  }
+  
+  .submit-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    display: block;
+    margin: 30px auto 0;
+  }
+  
+  .submit-btn:hover {
+    background-color: #008b9a;
+    transform: translateY(-2px);
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--modal-bg);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+  
+  .modal {
+    background-color: var(--card-color);
+    color: var(--text-color);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    animation: fadeInScale 0.4s ease;
+  }
+  
+  .modal h2 {
+    margin-top: 0;
+  }
+  
+  .modal .answer-summary {
+    margin-top: 15px;
+    font-weight: 500;
+    padding-left: 15px;
+  }
+  
+  .correct {
+    color: var(--correct-color);
+    font-weight: 600;
+  }
+  
+  .incorrect {
+    color: var(--incorrect-color);
+    font-weight: 600;
+  }
+  
+  .close-btn {
+    background-color: var(--danger);
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .close-btn:hover {
+    background-color: var(--danger-hover);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  @media (max-width: 600px) {
+    .section {
+      padding: 20px 10px;
+    }
+  
+    .submit-btn {
+      width: 100%;
+    }
+  
+    .modal {
+      padding: 20px;
+    }
+  }
+  
+  /* Theme toggle button */
+  .theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: background-color 0.3s;
+  }
+  
+  .theme-toggle:hover {
+    background-color: #008b9a;
+  }
+  

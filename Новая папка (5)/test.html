@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тест на знание</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #fff);
+      animation: backgroundMove 20s ease infinite alternate;
+    }
+
+    @keyframes backgroundMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 100% 100%; }
+    }
+
+    h1, h3 {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" title="Переключить тему">🌓</button>
+
+  <div class="section">
+    <h1>Тест на общие знания</h1>
+
+    <div class="question-block" data-question="0">
+      <h3>1.  Какой из следующих языков программирования является строго типизированным?
+      </h3>
+      <div class="answers">
+        <label><input type="radio" name="q0" value="Python"> Python</label>
+        <label><input type="radio" name="q0" value="TypeScript"> TypeScript</label>
+        <label><input type="radio" name="q0" value="JavaScript"> JavaScript</label>
+      </div>
+    </div>
+
+    <div class="question-block" data-question="1">
+      <h3>2. Какой язык используется в браузере?</h3>
+      <div class="answers">
+        <label><input type="radio" name="q1" value="Python"> Python</label>
+        <label><input type="radio" name="q1" value="C++"> C++</label>
+        <label><input type="radio" name="q1" value="JavaScript"> JavaScript</label>
+      </div>
+    </div>
+
+    <div class="question-block" data-question="2">
+      <h3>3. Какой из следующих способов является правильным для объявления переменной в современном C++?</h3>
+      <div class="answers">
+        <label><input type="radio" name="q2" value="var number = 10"> var number = 10</label>
+        <label><input type="radio" name="q2" value="int number = 10"> int number = 10</label>
+        <label><input type="radio" name="q2" value="let number = 10"> let number = 10</label>
+      </div>
+    </div>
+
+    <div class="question-block" data-question="3">
+      <h3>4. Что вернет следующий код в Python: print(len("Привет"))?</h3>
+      <div class="answers">
+        <label><input type="radio" name="q3" value="5"> 5</label>
+        <label><input type="radio" name="q3" value="6"> 6</label>
+        <label><input type="radio" name="q3" value="Ошибку"> Ошибку</label>
+      </div>
+    </div>
+
+    <div class="question-block" data-question="4">
+      <h3>5. HTML расшифровывается как?</h3>
+      <div class="answers">
+        <label><input type="radio" name="q4" value="HyperText Markup Language"> HyperText Markup Language</label>
+        <label><input type="radio" name="q4" value="HighText Machine Language"> HighText Machine Language</label>
+        <label><input type="radio" name="q4" value="Home Tool Markup Language"> Home Tool Markup Language</label>
+      </div>
+    </div>
+
+    <button class="submit-btn">Завершить тест</button>
+  </div>
+
+  <div class="modal-overlay">
+    <div class="modal">
+      <h2>Результаты теста</h2>
+      <div class="answer-summary"></div>
+      <button class="close-btn">Закрыть</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

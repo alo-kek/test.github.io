@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Психологический тест</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel=”icon” href="img/i.webp" type=”image/x-icon”>
+
+</head>
+<body>
+
+  <section class="section hero"> 
+    <div>
+      <h1>Готовы узнать больше о себе? Пройдите наш тест!</h1>
+      <p>Наш тест состоит из 3х вопросов о программировании, с его помощью ты можешь узнать что то новое или исправить свои ошибки </p>
+    </div>
+    <img src="img/i (1).webp" alt="Тестирование">
+  </section>
+
+  <section class="section">
+    <h2>Как проходит тестирование?</h2>
+    <div class="steps">
+      <div><strong>Ответьте на вопросы</strong><br>Выберите наиболее подходящий вариант ответа.</div>
+      <div><strong>Дождитесь результатов</strong><br>Система автоматически обработает ваши ответы.</div>
+      <div><strong>Получите отчет</strong><br>Ознакомьтесь с подробным анализом ваших результатов.</div>
+    </div>
+  </section>
+
+  <section class="test-time">
+    <h2>Сколько времени займет тест?</h2>
+    <p style="font-size: 40px; font-weight: bold;">15–20 минут</p>
+    <p>Тест разработан таким образом, чтобы быть максимально информативным и занимать минимум вашего времени.<br>
+    Пройдите его в удобное для вас время и получите ценные сведения о себе.</p>
+  </section>
+
+  <section class="button-block">
+    <button class="start-btn" onclick="startTest()">Начать тест</button>
+  </section>
+
+  <script>
+    function startTest() {
+      window.location.href = 'test.html';
+    }
+  </script>
+
+</body>
+</html>
